@@ -26,7 +26,7 @@
 
         if ($user) {
             if (password_verify($password, $user['password'])) {
-                $_SESSION['loggedInUser'] = $user['id'];
+                $_SESSION['loggedInUser'] = $user['username'];
                 header("Location: indexa.php");
                 die();
             } else {
@@ -35,16 +35,16 @@
         } else {
             $_SESSION['error'] = "Gebruiker bestaat niet.";
         }
-    }
+    }    
     ?>
     <form method="POST">
         <h3>Login Here</h3>
 
         <label for="username">Username</label>
-        <input type="text" placeholder="Username" id="username" name="username">
+        <input type="text" placeholder="enter your username.." id="username" name="username" class="input">
 
         <label for="password">Password</label>
-        <input type="password" placeholder="Password" id="password" name="password">
+        <input type="password" placeholder="enter your password.." id="password" name="password" class="input">
 
         <button type="submit">Log In</button>
        
@@ -58,6 +58,3 @@
 
 </body>
 </html>
-
-
-

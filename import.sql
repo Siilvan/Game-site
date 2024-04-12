@@ -66,3 +66,5 @@ VALUES
     ('CD Projekt', '$2y$10$JMC1UZb10wxpdXXJukKYbeOu58kFTQW1v6psWzr/HxGCSTlOGpdR6', 'admin'),
     ('Bethesda Softworks', '$2y$10$WJVLj9pPCpV8IHL7BXYMCedhNgNLe9xe2eqtPeaQLmg4wo8UFDwGC', 'admin'),
     ('Codemasters', '$2y$10$UcGnCH905KvPCI11jtrImuTpNVPpo7G9UetZS4QiMtFprcOurjwb.', 'admin'); 
+
+ALTER TABLE games ADD FULLTEXT(Title);

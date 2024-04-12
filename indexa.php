@@ -19,24 +19,31 @@ $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <title>Almost there</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="home_style.css">
-
+<?php 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $sql = 'SELECT * FROM games WHERE Title LIKE :search';
+    $stmt = $pdo->prepare($sql);
+    $searchString = '%' . $_POST['search'] . '%';
+    $stmt->bindParam('search', $searchString);
+    $stmt->execute();
+    $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+?>
 </head>
 <body>
-<nav>
-<ul>
-  <li><a class="active" href="indexa.php">Home</a></li>
-  <li><a href="#">Library</a></li>
-  <li><a href="#"><?= $_SESSION['loggedInUser']  ?></a></li>
-  <li class="search-container">
-    <div>
-        <form action="indexa.php">
-            <input type="text" placeholder="Search.." name="search">
-            <button type="submit" value="hoi"></button>
-        </form>
-      </div>
-  </li>
 
-</ul>
+<nav>
+    <div class="left">
+        <a class="active" href="indexa.php">Home</a>
+        <a href="#">Library</a>
+        <a href="#"><?= $_SESSION['loggedInUser'] ?></a>
+    </div>
+    <div class="search-container">
+        <form action="indexa.php" method="POST">
+            <input type="text" placeholder="Search.." name="search" id="search">
+            <button type="submit"><img src="images/search.jpg"></button>
+        </form>
+    </div>
 </nav>
 <div class="mx-auto my-auto px-8 py-8 max-w-5xl backdrop-blur border-solid border border-gray-300 rounded-lg shadow-2xl">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">

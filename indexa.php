@@ -38,16 +38,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <a href="#">Library</a>
         <a href="#"><?= $_SESSION['loggedInUser'] ?></a>
     </div>
+    <a href="logout.php"><button type="button" class="logout">Logout</button></a>
 
 </nav>
-<div class="mx-auto holder" s>
+<div class="mx-auto holder">
     <div class="search-container" style="float: right; border-radius: 5px;">
         <form action="indexa.php" method="POST">
             <input type="text" placeholder="Search.." name="search" id="search">
             <button type="submit"><img src="images/search.jpg"></button>
         </form>
     </div>
-
 </div>
 <div class="mx-auto my-auto px-8 py-8 max-w-5xl backdrop-blur border-solid border border-gray-300 rounded-b-lg shadow-2xl">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">

@@ -27,6 +27,7 @@
         if ($user) {
             if (password_verify($password, $user['password'])) {
                 $_SESSION['loggedInUser'] = $user['username'];
+                $_SESSION['loggedInUserId'] = $user['id'];
                 header("Location: indexa.php");
                 die();
             } else {

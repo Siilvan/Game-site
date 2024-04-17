@@ -73,7 +73,12 @@ ALTER TABLE games ADD FULLTEXT(Title);
 
 CREATE TABLE winkelwagen (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(100),
-    games VARCHAR(100),
-    prijs INT
+    UserID VARCHAR(100),
+    GameID VARCHAR(100)
+);
+
+CREATE TABLE library (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    UserID VARCHAR(100),
+    GameID VARCHAR(100)
 );

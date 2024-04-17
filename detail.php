@@ -7,6 +7,7 @@ if (!isset($_SESSION['loggedInUser'])) {
 
 include_once('connector.php');
 
+
 $pdo = CONNECT_PDO();
 $sql = "SELECT * FROM games WHERE GameID = ?";
 $stmt = $pdo->prepare($sql);
@@ -26,9 +27,23 @@ $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <a href="indexa.php">Store</a>
                 <a href="#">Library</a>
                 <a><?= $_SESSION['loggedInUser'] ?></a>
+                <p>hallo</p>
             </div>
         </nav>
     </head>
+
+    <?php
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $sql = 'INSERT INTO winkelwagen (UserID, GameID) VALUES (:UserID, :GameID)';
+        $stmt = $pdo->prepare($sql);
+
+        $stmt->bindParam(':UserID', $_SESSION['loggedInUserId']);
+        $stmt->bindParam(':GameID', $_GET['game']);
+
+        $stmt->execute();
+    }
+
+    ?>
     
 <body>
     <?php
@@ -68,11 +83,9 @@ $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         € <?= $game['Price'] ?> </span> 
                     <?php } ?>
 
-                <div style="float: right;">
-                  <a href="../Checkout/checkout2.html">
-                      <button type="button" class="btn btn-success"><span>Buy Game</span></button>
-                    </div>
-                  </a>
+                <form method="POST" style="float: right;">
+                    <button type="submit" class="btn btn-success"><span>Add To Cart</span></button>
+                </form>
             </div>
         </div>
         </div>

@@ -8,7 +8,7 @@ if (!isset($_SESSION['loggedInUser'])) {
 include_once('connector.php');
 
 $pdo = CONNECT_PDO();
-$sql = "SELECT * FROM games WHERE GameId = ?";
+$sql = "SELECT * FROM games WHERE GameID = ?";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([$_GET['game']]);
 $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -31,39 +31,54 @@ $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </head>
     
 <body>
-    <div class="container" style="width: 60%; height: 470px;  background-color: #0e151d;">
+    <?php
+
+    foreach($games as $game) {
+
+    ?>
+    <div class="container" style="width: 55%; height: 470px;  background-color: #0e151d;">
         <div style="float: left; width: 60%; height: 100%;">
+            <img src="./images/<?= $game['Foto'] ?>" style="height:100%; padding: 10px; padding-left: 10px;">
     </div>
 
-        <div id="game-highlight" style="display: inline-block; width: 40%; height: 100%; padding-left: 1%;">
-            <img class="game_header_image_full" src="../../ImageData/mk11.jpg">
+        <div style="float: left; width: 40%; height: 100%; padding-top: 10px">
 
+            <img src="./images/<?= $game['Banner'] ?>">
+            <p class="smallFont">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem praesentium sint assumenda amet neque repellendus delectus laboriosam hic aliquid iste dicta, sapiente ipsum dolore impedit voluptatem at qui.</p>
                 <p class="tinyFont">
-                    RELEASE YEAR:                <?= $games[0]['ReleaseYear'] ?>
+                    RELEASE YEAR: <?= $game['ReleaseYear'] ?>
                     <br>
-                    Publisher:                   <?= $games[0]['Publisher'] ?>
+                    PUBLISHER: <?= $game['Publisher'] ?>
+                    <br>
+                    GENRE: <?= $game['Genre'] ?>
                 </p>
-            </p>
         </div>
         </div>
 
-        <div class="container" id="game-price" style="
-        width: 60%; height: 80px; background-image: linear-gradient(to right, rgb(45, 61, 74) , rgb(87, 101, 116));">
+        <div class="container" id="game-price" style="width: 55%; height: 80px; background-image: linear-gradient(to right, rgb(45, 61, 74) , rgb(87, 101, 116));">
             <div class="smallFont" style="display: inline-block; font-weight: 600; font-size: 20px; padding-left: 5px; margin-top: 25px;">
-                Purchase <?= $games[0]['Title'] ?>
+                Purchase <?= $game['Title'] ?>
             </div>
             
             <div id="price" style="background-color: black; float: right; padding: 5px; margin-top: 20px;">
-                    <span style="color: #c5d3de; position: relative; top: 8px; padding-right: 12px;">€ <?= $games[0]['Price'] ?> </span>
+                    <span style="color: #c5d3de; position: relative; top: 8px; padding-right: 12px;">
+                    <?php if($game['Price'] == 0.0) {
+                        echo "Free"; ?></span>
+                    <?php } else { ?>
+                        € <?= $game['Price'] ?> </span> 
+                    <?php } ?>
 
-                <div id="btn-buy" style="float: right;">
+                <div style="float: right;">
                   <a href="../Checkout/checkout2.html">
-                    <button type="button" class="btn btn-success"><span>Buy Game</span></button>
+                      <button type="button" class="btn btn-success"><span>Buy Game</span></button>
+                    </div>
                   </a>
-                </div>
             </div>
         </div>
         </div>
+        <?php
+        }
+        ?>
     </body>
 
 </html>

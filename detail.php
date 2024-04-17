@@ -17,13 +17,13 @@ $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html>
     <head>
         <meta charset="utf-8">
-        <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="detail_style.css">
 
         <nav>
             <div class="left">
-                <a class="active" href="indexa.php">Store</a>
+                <a href="indexa.php">Store</a>
                 <a href="#">Library</a>
                 <a><?= $_SESSION['loggedInUser'] ?></a>
             </div>
@@ -38,7 +38,7 @@ $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
     ?>
     <div class="container" style="width: 55%; height: 470px;  background-color: #0e151d;">
         <div style="float: left; width: 60%; height: 100%;">
-            <img src="./images/<?= $game['Foto'] ?>" style="height:100%; padding: 10px; padding-left: 10px;">
+            <img src="./images/<?= $game['Foto'] ?>" style="height:100%; padding: 10px; ">
     </div>
 
         <div style="float: left; width: 40%; height: 100%; padding-top: 10px">
@@ -60,7 +60,7 @@ $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 Purchase <?= $game['Title'] ?>
             </div>
             
-            <div id="price" style="background-color: black; float: right; padding: 5px; margin-top: 20px;">
+            <div id="price" style="background-color: black; float: right; padding: 5px; margin-top: 20px; border-radius: 5px;">
                     <span style="color: #c5d3de; position: relative; top: 8px; padding-right: 12px;">
                     <?php if($game['Price'] == 0.0) {
                         echo "Free"; ?></span>

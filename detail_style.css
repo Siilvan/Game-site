@@ -10,8 +10,16 @@ body {
     z-index: 0;
 }
 
+.active {
+    color: rgba(27, 158, 255, 255);
+    text-decoration: underline;
+}
+
+
+
 nav {
     list-style-type: none;
+    position: fixed;
     width: 100%;
     top: 0;
     margin-bottom: 50px;
@@ -23,7 +31,6 @@ nav {
     align-items: center;
     height: 50px;
     z-index: 10;
-    color: white;
 
 }
 
@@ -47,10 +54,6 @@ nav {
     text-decoration: none;
 }
 
-.active {
-    color: rgba(27, 158, 255, 255);
-    text-decoration: underline;
-}
 
 .smallFont{
     font-size: 15px;

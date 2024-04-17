@@ -41,8 +41,7 @@ VALUES
     ('Far Cry 6', 'Action-Adventure', 2021, 'Ubisoft', 'ja', 'nee', 'farcry.jpg', 'farcry_banner.jpg', 59.99),
     ('GTA: San Andreas', 'Open-World', 2004, 'Rockstar', 'nee', 'ja', 'gtasa.jpg', 'gtasa_banner.jpg', 14.99),
     ('The Elder Scrolls V: Skyrim', 'Role-Playing', 2011, 'Bethesda Softworks', 'nee', 'ja', 'skyrim.jpg', 'skyrim_banner.jpg', 39.99),
-    ('Super Mario Odyssey', 'Platformer', 2017, 'Nintendo', 'nee', 'ja', 'oddyssey.jpg', 'oddyssey_banner.jpg', 39.99),
-    ('Halo Infinite', 'First-Person Shooter', 2021, 'Microsoft Studios', 'ja', 'nee', 'halo.jpg', 'halo_banner.jpg', 49.99);
+    ('Super Mario Odyssey', 'Platformer', 2017, 'Nintendo', 'nee', 'ja', 'oddyssey.jpg', 'oddyssey_banner.jpg', 39.99);
 
 CREATE TABLE Users (
     id INT PRIMARY KEY AUTO_INCREMENT,

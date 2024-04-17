@@ -60,7 +60,7 @@ $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 Purchase <?= $game['Title'] ?>
             </div>
             
-            <div id="price" style="background-color: black; float: right; padding: 5px; margin-top: 20px; border-radius: 5px;">
+            <div style="background-color: black; float: right; padding: 5px; margin-top: 20px; border-radius: 5px;">
                     <span style="color: #c5d3de; position: relative; top: 8px; padding-right: 12px;">
                     <?php if($game['Price'] == 0.0) {
                         echo "Free"; ?></span>

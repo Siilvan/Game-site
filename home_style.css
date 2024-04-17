@@ -68,7 +68,6 @@ body {
 
 nav {
     list-style-type: none;
-    position: fixed;
     width: 100%;
     top: 0;
     margin-bottom: 50px;
@@ -104,10 +103,8 @@ nav {
 
 .search-container {
     display: flex;
-    justify-self: end;
-    align-self: center;
-    padding-right: 50px;
-
+    align-items: center;
+    padding-left: 20px;
 }
 
 input[type="text"] {
@@ -128,4 +125,11 @@ button img {
     background-color: rgba(84, 157, 199, 255);
     padding: 1px;
     right: 5px;
+}
+
+.holder {
+    width: 67.5%;
+    height: 50px;
+    background-image: linear-gradient(to right, rgb(45, 61, 74), rgb(87, 101, 116));
+    display: flex;
 }

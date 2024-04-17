@@ -17,13 +17,13 @@ $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="detail_style.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="detail_style.css">
 
         <nav>
             <div class="left">
-                <a class="active" href="indexa.php">Home</a>
+                <a class="active" href="indexa.php">Store</a>
                 <a href="#">Library</a>
                 <a><?= $_SESSION['loggedInUser'] ?></a>
             </div>

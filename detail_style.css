@@ -28,7 +28,7 @@ nav {
 }
 
 .left {
-    color: white;
+    color: lightgray;
     display: block;
     justify-content: flex-start;
     align-items: center;
@@ -44,6 +44,12 @@ nav {
 
 .left a:hover {
     color: white;
+    text-decoration: none;
+}
+
+.active {
+    color: rgba(27, 158, 255, 255);
+    text-decoration: underline;
 }
 
 .smallFont{

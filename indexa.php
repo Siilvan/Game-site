@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <nav>
     <div class="left">
-        <a class="active" href="indexa.php">Home</a>
+        <a class="active" href="indexa.php">Store</a>
         <a href="#">Library</a>
         <a href="#"><?= $_SESSION['loggedInUser'] ?></a>
     </div>

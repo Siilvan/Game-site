@@ -12,34 +12,37 @@ CREATE TABLE Games (
     Publisher VARCHAR(100),
     InGamePurchases VARCHAR(5),
     HasWonAward VARCHAR(5),
-    Foto VARCHAR(100)
+    Foto VARCHAR(100),
+    Banner VARCHAR(100),
+    Price Decimal(10, 2)
 );
 
-INSERT INTO Games (Title, Genre, ReleaseYear, Publisher, InGamePurchases, HasWonAward, Foto) 
+INSERT INTO Games (Title, Genre, ReleaseYear, Publisher, InGamePurchases, HasWonAward, Foto, Banner, Price) 
 VALUES 
-    ('Red Dead Redemption 2', 'Action-Adventure', 2018, 'Rockstar', 'ja', 'ja', 'rdr2.jpg'),
-    ('Assassins Creed Valhalla', 'Action-Adventure', 2020, 'Ubisoft', 'ja', 'nee', 'acv.jpg'),
-    ('The Legend of Zelda: Breath of the Wild', 'Action-Adventure', 2017, 'Nintendo', 'nee', 'ja', 'botw.jpg'),
-    ('Uncharted 4: A Thiefs End', 'Action-Adventure', 2016, 'Naughty Dog', 'nee', 'nee', 'uncharted4.jpg'),
-    ('Minecraft', 'Sandbox', 2011, 'Mojang', 'ja', 'ja', 'mc.jpg'),
-    ('No Mans Sky', 'Sandbox', 2016, 'Hello Games', 'ja', 'nee', 'nms.jpg'),
-    ('Stardew Valley', 'Sandbox', 2016, 'ConcernedApe', 'nee', 'nee', 'sv.jpg'),
-    ('Grand Theft Auto V', 'Open-World', 2013, 'Rockstar', 'ja', 'ja', 'gtaV.jpg'),
-    ('Watch Dogs: Legion', 'Open-World', 2020, 'Ubisoft', 'ja', 'nee', 'wdl.jpg'),
-    ('Forza Horizon 4', 'Racing', 2018, 'Microsoft Studios', 'ja', 'ja', 'fh4.jpg'),
-    ('Need for Speed: Heat', 'Racing', 2019, 'Electronic Arts', 'ja', 'nee', 'nfsh.jpg'),
-    ('FIFA 22', 'Sports', 2021, 'EA Sports', 'ja', 'ja', 'fifa22.jpg'),
-    ('NBA 2K21', 'Sports', 2020, '2K Sports', 'ja', 'nee', 'nba.jpg'),
-    ('Rocket League', 'Sports', 2015, 'Psyonix', 'ja', 'ja', 'rl.jpg'),
-    ('Cyberpunk 2077', 'Role-Playing', 2020, 'CD Projekt', 'ja', 'nee', 'cyberpunk.jpg'),
-    ('Fallout 4', 'Role-Playing', 2015, 'Bethesda Softworks', 'ja', 'ja', 'fallout.jpg'),
-    ('Mario Kart 8 Deluxe', 'Racing', 2017, 'Nintendo', 'nee', 'ja', 'mariokart.jpg'),
-    ('F1 2021', 'Racing', 2021, 'Codemasters', 'ja', 'ja', 'f1.jpg'),
-    ('Death Stranding', 'Action-Adventure', 2019, 'Kojima Productions', 'ja', 'ja', 'ds.jpg'),
-    ('Far Cry 6', 'Action-Adventure', 2021, 'Ubisoft', 'ja', 'nee', 'farcry.jpg'),
-    ('GTA: San Andreas', 'Open-World', 2004, 'Rockstar', 'nee', 'ja', 'gtasa.jpg'),
-    ('The Elder Scrolls V: Skyrim', 'Role-Playing', 2011, 'Bethesda Softworks', 'nee', 'ja', 'skyrim.jpg'),
-    ('Super Mario Odyssey', 'Platformer', 2017, 'Nintendo', 'nee', 'ja', 'oddyssey.jpg');
+    ('Red Dead Redemption 2', 'Action-Adventure', 2018, 'Rockstar', 'ja', 'ja', 'rdr2.jpg', 'rdr2_banner.jpg', 59.99),
+    ('Assassins Creed Valhalla', 'Action-Adventure', 2020, 'Ubisoft', 'ja', 'nee', 'acv.jpg', 'acv_banner.jpg', 49.99),
+    ('The Legend of Zelda: Breath of the Wild', 'Action-Adventure', 2017, 'Nintendo', 'nee', 'ja', 'botw.jpg', 'botw_banner.jpg', 49.99),
+    ('Uncharted 4: A Thiefs End', 'Action-Adventure', 2016, 'Naughty Dog', 'nee', 'nee', 'uncharted4.jpg', 'uncharted4_banner.jpg', 39.99),
+    ('Minecraft', 'Sandbox', 2011, 'Mojang', 'ja', 'ja', 'mc.jpg', 'mc_banner.jpg', 29.99),
+    ('No Mans Sky', 'Sandbox', 2016, 'Hello Games', 'ja', 'nee', 'nms.jpg', 'nms_banner.jpg', 39.99),
+    ('Stardew Valley', 'Sandbox', 2016, 'ConcernedApe', 'nee', 'nee', 'sv.jpg', 'sv_banner.jpg', 14.99),
+    ('Grand Theft Auto V', 'Open-World', 2013, 'Rockstar', 'ja', 'ja', 'gtaV.jpg', 'gtaV_banner.jpg', 29.99),
+    ('Watch Dogs: Legion', 'Open-World', 2020, 'Ubisoft', 'ja', 'nee', 'wdl.jpg', 'wdl_banner.jpg', 49.99),
+    ('Forza Horizon 4', 'Racing', 2018, 'Microsoft Studios', 'ja', 'ja', 'fh4.jpg', 'fh4_banner.jpg', 39.99),
+    ('Need for Speed: Heat', 'Racing', 2019, 'Electronic Arts', 'ja', 'nee', 'nfsh.jpg', 'nfsh_banner.jpg', 49.99),
+    ('FIFA 22', 'Sports', 2021, 'EA Sports', 'ja', 'ja', 'fifa22.jpg', 'fifa22_banner.jpg', 59.99),
+    ('NBA 2K21', 'Sports', 2020, '2K Sports', 'ja', 'nee', 'nba.jpg', 'nba_banner.jpg', 59.99),
+    ('Rocket League', 'Sports', 2015, 'Psyonix', 'ja', 'ja', 'rl.jpg', 'rl_banner.jpg', 0.0),
+    ('Cyberpunk 2077', 'Role-Playing', 2020, 'CD Projekt', 'ja', 'nee', 'cyberpunk.jpg', 'cyberpunk_banner.jpg', 59.99),
+    ('Fallout 4', 'Role-Playing', 2015, 'Bethesda Softworks', 'ja', 'ja', 'fallout.jpg', 'fallout_banner.jpg', 29.99),
+    ('Mario Kart 8 Deluxe', 'Racing', 2017, 'Nintendo', 'nee', 'ja', 'mariokart.jpg', 'mariokart_banner.jpg', 49.99),
+    ('F1 2021', 'Racing', 2021, 'Codemasters', 'ja', 'ja', 'f1.jpg', 'f1_banner.jpg', 59.99),
+    ('Death Stranding', 'Action-Adventure', 2019, 'Kojima Productions', 'ja', 'ja', 'ds.jpg', 'ds_banner.jpg', 49.99),
+    ('Far Cry 6', 'Action-Adventure', 2021, 'Ubisoft', 'ja', 'nee', 'farcry.jpg', 'farcry_banner.jpg', 59.99),
+    ('GTA: San Andreas', 'Open-World', 2004, 'Rockstar', 'nee', 'ja', 'gtasa.jpg', 'gtasa_banner.jpg', 14.99),
+    ('The Elder Scrolls V: Skyrim', 'Role-Playing', 2011, 'Bethesda Softworks', 'nee', 'ja', 'skyrim.jpg', 'skyrim_banner.jpg', 39.99),
+    ('Super Mario Odyssey', 'Platformer', 2017, 'Nintendo', 'nee', 'ja', 'oddyssey.jpg', 'oddyssey_banner.jpg', 39.99),
+    ('Halo Infinite', 'First-Person Shooter', 2021, 'Microsoft Studios', 'ja', 'nee', 'halo.jpg', 'halo_banner.jpg', 49.99);
 
 CREATE TABLE Users (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -68,3 +71,10 @@ VALUES
     ('Codemasters', '$2y$10$UcGnCH905KvPCI11jtrImuTpNVPpo7G9UetZS4QiMtFprcOurjwb.', 'admin'); 
 
 ALTER TABLE games ADD FULLTEXT(Title);
+
+CREATE TABLE winkelwagen (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(100),
+    games VARCHAR(100),
+    prijs INT
+);

@@ -49,8 +49,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
     <?php foreach ($games as $game) : ?>
         <div class="card flex flex-col justify-between">
-        <h2><strong><?= $game['Title'] ?></strong></h2>
-        <img src="images/<?= $game['Foto'] ?>" alt="<?= $game['Title'] ?>" >
+            <a href="detail.php?game=<?= $game['GameId'] ?>">
+                <h2><strong><?= $game['Title'] ?></strong></h2>
+                <img src="images/<?= $game['Foto'] ?>" alt="<?= $game['Title'] ?>" >
+            </a>
         </div>
     <?php endforeach; ?>    
 </div>

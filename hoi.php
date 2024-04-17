@@ -1,33 +1,26 @@
+<?php
+
+session_start();
+if (!isset($_SESSION['loggedInUser'])) {
+    header('Location: login.php');
+}
+
+include_once('connector.php');
+
+$pdo = CONNECT_PDO();
+$sql = "SELECT * FROM games";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$games = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="home_style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.4;
-            background-color: #f1f1f1;
-        }
 
-        .navbar {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .navbar a {
-            color: #fff;
-            text-decoration: none;
-            margin-right: 10px;
-        }
 
         .container {
             display: flex;
@@ -88,12 +81,13 @@
     </style>
 </head>
 <body>
-    <div class="navbar">
+<nav>
+    <div class="left">
+        <a class="active" href="indexa.php">Home</a>
         <a href="#">Library</a>
-        <a href="#">Store</a>
-        <a href="#">Community</a>
-        <a href="#">Profile</a>
+        <a href="#"><?= $_SESSION['loggedInUser'] ?></a>
     </div>
+</nav>
     <div class="container">
         <div class="sidebar">
             <a href="#">Portal</a>

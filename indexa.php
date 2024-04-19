@@ -36,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="left">
         <a class="active" href="indexa.php">Store</a>
         <a href="#">Library</a>
+        <a href="cart.php">Cart</a>
         <a href="#"><?= $_SESSION['loggedInUser'] ?></a>
     </div>
     <a href="logout.php"><button type="button" class="logout">Logout</button></a>

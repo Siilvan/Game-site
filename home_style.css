@@ -16,6 +16,7 @@ body {
     border: 2px solid red;
     padding: 5px;
     border-radius: 10px;
+    margin: 10px;
 }
 
 .logout:hover{
@@ -143,4 +144,48 @@ button img {
     height: 50px;
     background-image: linear-gradient(to right, rgb(45, 61, 74), rgb(87, 101, 116));
     display: flex;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    color: lightgray;
+    background-color: rgba(23, 29, 37, 255);
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+
+}
+.cart-item img {
+    max-width: 100px;
+    margin-right: 20px;
+}
+
+.cart-total {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    text-align: right;
+}
+
+.checkout-btn {
+    display: block;
+    width: 20%;
+    padding: 10px;
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.cart-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 50px;
 }

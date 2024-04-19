@@ -169,18 +169,6 @@ button img {
     text-align: right;
 }
 
-.checkout-btn {
-    display: block;
-    width: 20%;
-    padding: 10px;
-    background-color: #3498db;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
 .cart-center {
     display: flex;
     justify-content: center;

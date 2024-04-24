@@ -24,15 +24,14 @@ foreach ($cart as $item) {
     $i++;
 }
 
-IF ($_SERVER['REQUEST_METHOD'] == 'POST') {
+IF ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['submit'] != 'Bai') {
     $sql = 'DELETE FROM winkelwagen WHERE GameID = ?';
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$_POST['game']]);
     header('Location: cart.php');
 }
 
-IF ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
+IF ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['submit'] == 'Bai') {
     $sql = 'INSERT INTO library (UserID, GameID) VALUES (?, ?)';
     $stmt = $pdo->prepare($sql);
     foreach ($cart as $item) {
@@ -42,6 +41,7 @@ IF ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = 'DELETE FROM winkelwagen WHERE UserID = ?';
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$_SESSION['loggedInUserId']]);
+    header('Location: cart.php');
 }
 
 ?>
@@ -55,14 +55,14 @@ IF ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="home_style.css">
-<title>Steam Cart</title>
+<title>Almost There</title>
 
 </head>
 <body>
 <nav>
     <div class="left">
         <a href="indexa.php">Store</a>
-        <a href="#">Library</a>
+        <a href="library.php">Library</a>
         <a href="cart.php" class="active">Cart</a>
         <a href="#"><?= $_SESSION['loggedInUser'] ?></a>
     </div>
@@ -103,7 +103,7 @@ IF ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="holder mx-auto px-8  max-w-3xl rounded-b-lg flex justify-between items-center" style="color: lightgray;">
             <h2>Estimated Total: €<?= $prijs ?></h2>
             <form method="POST" style="display: flex; float: right;">
-                    <button type="submit" class="btn btn-success">Buy Now!</button>
+                    <button type="submit" class="btn btn-success" name="submit" value="Bai">Buy Now!</button>
                 </form>
         </div>
     </main>

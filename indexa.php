@@ -35,14 +35,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <nav>
     <div class="left">
         <a class="active" href="indexa.php">Store</a>
-        <a href="#">Library</a>
+        <a href="library.php">Library</a>
         <a href="cart.php">Cart</a>
         <a href="#"><?= $_SESSION['loggedInUser'] ?></a>
     </div>
     <a href="logout.php"><button type="button" class="logout">Logout</button></a>
 
 </nav>
-<div class="mx-auto holder">
+
+<div class="mx-auto holder width">
     <div class="search-container" style="float: right; border-radius: 5px;">
         <form action="indexa.php" method="POST">
             <input type="text" placeholder="Search.." name="search" id="search">
@@ -50,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </form>
     </div>
 </div>
-<div class="mx-auto my-auto px-8 py-8 max-w-5xl backdrop-blur border-solid border border-gray-300 rounded-b-lg shadow-2xl">
+<div class="mx-auto my-auto px-8 py-8 max-w-5xl backdrop-blur border-solid border border-gray-300 rounded-b-lg shadow-2xl width">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
 
     <?php foreach ($games as $game) : ?>
@@ -62,6 +63,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     <?php endforeach; ?>    
 </div>
-</div>
+
 </body>
 </html>

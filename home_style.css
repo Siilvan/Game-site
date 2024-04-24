@@ -73,7 +73,6 @@ body {
 
 .active {
     color: rgba(27, 158, 255, 255);
-    text-decoration: underline;
 }
 
 
@@ -111,6 +110,7 @@ nav {
 
 .left a:hover {
     color: white;
+    text-decoration: none;
 }
 
 .search-container {
@@ -140,10 +140,14 @@ button img {
 }
 
 .holder {
-    width: 67.5%;
+    width: 49%;
     height: 50px;
     background-image: linear-gradient(to right, rgb(45, 61, 74), rgb(87, 101, 116));
     display: flex;
+}
+
+.width {
+    width: 1000px;
 }
 
 .cart-item {
@@ -177,3 +181,15 @@ button img {
     width: 100%;
     margin-top: 50px;
 }
+
+.container {
+    display: flex;
+
+}
+
+.sidebar {
+    flex: 0 0 250px;
+    background-color: #333;
+        color: #fff;
+        padding: 20px;
+    }

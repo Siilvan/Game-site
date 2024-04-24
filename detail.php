@@ -25,7 +25,7 @@ $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <nav>
             <div class="left">
                 <a href="indexa.php">Store</a>
-                <a href="#">Library</a>
+                <a href="library.php">Library</a>
                 <a href="cart.php">Cart</a>
                 <a><?= $_SESSION['loggedInUser'] ?></a>
             </div>

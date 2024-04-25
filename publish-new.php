@@ -79,13 +79,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["image"]) && isset($_F
     <input type="radio" id="nee" name="igp" value="nee" />
     <label for="nee">Nee</label>
 </div>
-    <p style="display: flex; margin-bottom: 10px; justify-content: center; font-size: 20px"><strong>cover art & banner</strong></p>
-    <input type="file" name="image" id="image" class="hidden">
-    <label for="image" class="register">Select your cover art</label>
-
-    <input type="file" name="banner" id="banner" class="hidden">
-    <label for="banner" class="register">Select your banner</label>
-    <br>
+    <p style="display: flex; justify-content: center; font-size: 20px;"><strong>cover art & banner</strong></p>
+    <div class="btns">
+        
+        <input type="file" name="image" id="image" class="hidden">
+        <label for="image" class="images">Select your cover art</label>
+    
+        <input type="file" name="banner" id="banner" class="hidden">
+        <label for="banner" class="images">Select your banner</label>
+    </div>
 
     <button type="submit" value="Upload Image" class="register" style="font-weight: 600; font-size: 20px;">Publish</button>
 

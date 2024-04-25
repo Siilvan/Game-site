@@ -35,7 +35,7 @@ td {
 }
 
 form {
-    height: 600px;
+    height: 650px;
     width: 400px;
     background-color: rgba(255, 255, 255, 0.13);
     position: absolute;
@@ -88,7 +88,17 @@ label {
 }
 
 .register {
-    margin-top: 50px;
+    background-color: #ffffff;
+    color: black;
+    padding: 10px 10px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.images {
     background-color: #ffffff;
     color: black;
     padding: 10px 10px;
@@ -187,4 +197,9 @@ button {
     font-weight: 600;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
 }

@@ -39,7 +39,7 @@ nav {
     list-style-type: none;
     width: 100%;
     top: 0;
-    margin-bottom: 50px;
+
     overflow: hidden;
     background-color: rgba(23, 29, 37, 255);
     display: flex;
@@ -74,6 +74,7 @@ nav {
 .container {
     display: flex;
     justify-content: center;
+    margin-top: 50px;
 }
 
 .sidebar {
@@ -83,6 +84,7 @@ nav {
     padding: 20px;
     float: left;
     position: fixed;
+    height: 100%;
 }
 
 .smallFont {

@@ -59,11 +59,17 @@ $games2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
     
     <div class="sidebar">
         <?php
-        foreach ($games as $game) { ?>
-            <div style="padding: 5px;">
-                <a href="published.php?game=<?= $game['GameID'] ?>"><strong><?= $game['Title'] ?></strong></a>
-            </div>
-        <?php } ?>
+        foreach ($games as $game) { 
+            if ($game['GameID'] != $_GET['game']) { ?>
+                <div style="padding: 5px;">
+                    <a href="published.php?game=<?= $game['GameID'] ?>"><strong><?= $game['Title'] ?></strong></a>
+                </div>
+            <?php } else { ?>
+                <div style="padding: 5px;">
+                    <a href="published.php?game=<?= $game['GameID'] ?>"><strong class="active"><?= $game['Title'] ?></strong></a>
+                </div>
+            <?php } 
+        } ?>
     </div>
         
 <div class="container">
@@ -87,7 +93,7 @@ foreach ($games2 as $game2) {
                 GENRE: <?= $game2['Genre'] ?>
             </p>
             </div>
-            </div>
+        </div>
     <?php
 }
 ?>

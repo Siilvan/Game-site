@@ -53,7 +53,7 @@
 
         <input type="checkbox" id="role" name="role" value="admin"/>
 
-        <button type="submit">Register</button>
+        <button type="submit" class="register">Register</button>
     </form>
 </body>
 </html>

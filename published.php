@@ -50,7 +50,8 @@ $games2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <nav>
         <div class="left">
-            <a href="#" class="active">Library</a>
+            <a href="published.php" class="active">Published Games</a>
+            <a href="publish-new.php">New Game</a>
             <a href="#"><?= $_SESSION['loggedInUser'] ?></a>
         </div>
         <a href="logout.php"><button type="button" class="logout">Logout</button></a> 

@@ -1,4 +1,5 @@
 body {
+    color: #fff;
     font-family: Arial;
     margin: 0;
     padding: 0;
@@ -34,7 +35,7 @@ td {
 }
 
 form {
-    height: 520px;
+    height: 600px;
     width: 400px;
     background-color: rgba(255, 255, 255, 0.13);
     position: absolute;
@@ -68,7 +69,7 @@ form h3 {
 }
 
 label {
-    display: block;
+    display: inline;
     margin-top: 30px;
     font-size: 16px;
     font-weight: 500;
@@ -86,81 +87,17 @@ label {
     font-weight: 300;
 }
 
-button {
+.register {
     margin-top: 50px;
-    width: 100%;
     background-color: #ffffff;
-    color: #080710;
-    padding: 15px 0;
-    font-size: 18px;
-    font-weight: 600;
+    color: black;
+    padding: 10px 10px;
+    font-size: 15px;
+    font-weight: 500;
     border-radius: 5px;
     cursor: pointer;
 }
 
-input[type="checkbox"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    position: relative;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    cursor: pointer;
-    outline: none;
-    height: 3.6em;
-    width: 8.2em;
-    backdrop-filter: blur(10px);
-    -webkit-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s;
-    margin-top: 20px;
-    border-radius: 2px;
-}
-
-input[type="checkbox"]:before {
-    font-size: 1em;
-    content: "User";
-    position: absolute;
-    width: 3.75em;
-    height: 2.9em;
-    background-color: #2d2936;
-    color: #a0a0a0;
-    top: 0.42em;
-    left: 0.42em;
-    -webkit-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    letter-spacing: 1px;
-    border-radius: 2px;
-
-}
-
-input[type="checkbox"]:checked {
-    backdrop-filter: blur(10px);
-    border-radius: 2px;
-
-}
-
-input[type="checkbox"]:checked:before {
-    content: "Admin";
-    left: 4.1em;
-    color: #89befe;
-    border-radius: 2px;
-
-}
 
 .card {
     text-decoration: none;
@@ -174,4 +111,80 @@ input[type="checkbox"]:checked:before {
     width: 100%;
     border-radius: 0.5rem;
     padding-bottom: 0.5rem;
+}
+
+.active {
+    color: rgba(27, 158, 255, 255);
+}
+
+nav {
+    list-style-type: none;
+    width: 100%;
+    top: 0;
+    margin-bottom: 50px;
+    overflow: hidden;
+    background-color: rgba(23, 29, 37, 255);
+    display: flex;
+    position: sticky;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    z-index: 10;
+
+}
+
+.left {
+    color: lightgray;
+    display: block;
+    justify-content: flex-start;
+    align-items: center;
+    width: 60%;
+    font-size: 20px;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.left a {
+    margin: 15px;
+}
+
+.left a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.logout {
+    font-size: 20px;
+    color: red;
+    border: 2px solid red;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.logout:hover {
+    color: white;
+    background-color: red;
+}
+
+.igv {
+    padding-bottom: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+button {
+    margin-top: 50px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
 }

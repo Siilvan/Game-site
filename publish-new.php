@@ -31,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["image"]) && isset($_F
         $stmt->execute();
     }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["image"]) && isset($_F
     <input type="file" name="image" id="image" class="hidden">
     <label for="image" class="register">Select your cover art</label>
 
-    <input type="file" name="banner" id="banner" class="hidden">
+    <input type="file" name="banner" id="banner" class="hidden">Select your banner</label>">
     <label for="banner" class="register">Select your banner</label>
     <br>
 
